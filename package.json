@@ -1,0 +1,18 @@
+{
+  "name": "qalcbot",
+  "version": "1.0.0",
+  "description": "Math bot for Telegram",
+  "main": "dist/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "expwez",
+  "license": "MIT",
+  "dependencies": {
+    "@types/mathjs": "^4.4.0",
+    "@types/node-telegram-bot-api": "^0.30.1",
+    "log4js": "^2.10.0",
+    "mathjs": "^5.0.2",
+    "node-telegram-bot-api": "^0.30.0"
+  }
+}
