@@ -45,7 +45,7 @@ bot.on("inline_query", async (query: tgbot.InlineQuery) => {
     if (queryTrimmed == "") {
         let results: tgbot.InlineQueryResultArticle[] = []
         results.push(examples as any);
-        bot.answerInlineQuery(query.id, results);
+        bot.answerInlineQuery(query.id, results, {cache_time: 86400 });
         return;
     }
 
