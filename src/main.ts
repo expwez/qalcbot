@@ -94,7 +94,7 @@ bot.on("inline_query", async (tgquery: tgbot.InlineQuery) => {
         }
     ]
 
-    bot.answerInlineQuery(query.id, results, { cache_time: 86400 });
+    bot.answerInlineQuery(tgquery.id, results, { cache_time: 86400 });
 })
 
 // Handle messages in chats
