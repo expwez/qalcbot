@@ -22,7 +22,7 @@ log4js.configure({
 const logger = log4js.getLogger("default");
 
 const bot = new tgbot.default("000000000:AAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
-
+ 
 // Save examples article
 const examples = {
     type: "article" as "article",
