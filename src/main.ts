@@ -37,27 +37,27 @@ const examples = {
 };
 
 // Handle inline query
-bot.on("inline_query", async (query: tgbot.InlineQuery) => {
-    logger.debug("Got message from " + getUserDisplayName(query.from) + " with id `" + query.id + "`: " + query.query);
+bot.on("inline_query", async (tgquery: tgbot.InlineQuery) => {
+    logger.debug("Got message from " + getUserDisplayName(tgquery.from) + " with id `" + tgquery.id + "`: " + tgquery.query);
 
-    let queryTrimmed = query.query.trim();
+    let query = tgquery.query.trim().toLowerCase();
 
-    if (queryTrimmed == "") {
+    if (query == "") {
         let results: tgbot.InlineQueryResultArticle[] = []
         results.push(examples as any);
-        bot.answerInlineQuery(query.id, results, {cache_time: 86400 });
+        bot.answerInlineQuery(tgquery.id, results, {cache_time: 86400 });
         return;
     }
 
-    queryTrimmed = transliterate(queryTrimmed)
+    query = transliterate(query)
 
     let answer: CalculatorAnswer
 
     try {
-        answer = Calculator.calculate(queryTrimmed);
+        answer = Calculator.calculate(query);
     } catch (e) {
         if (e instanceof CalculateError) {
-            logger.debug("`" + query.id + "` id got error while calculating: " + e.message);
+            logger.debug("`" + tgquery.id + "` id got error while calculating: " + e.message);
 
             let results: tgbot.InlineQueryResultArticle[] = [
                 examples,
@@ -70,12 +70,12 @@ bot.on("inline_query", async (query: tgbot.InlineQuery) => {
                 }
             ]
 
-            bot.answerInlineQuery(query.id, results, { cache_time: 86400 });
+            bot.answerInlineQuery(tgquery.id, results, { cache_time: 86400 });
             return;
         } else throw e;
     }
 
-    logger.debug("`" + query.id + "` id got answer: " + answer.answer);
+    logger.debug("`" + tgquery.id + "` id got answer: " + answer.answer);
 
     let results: tgbot.InlineQueryResultArticle[] = [
         {
