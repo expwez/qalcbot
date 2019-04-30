@@ -9,10 +9,10 @@
   "author": "expwez",
   "license": "MIT",
   "dependencies": {
-    "@types/mathjs": "^4.4.0",
-    "@types/node-telegram-bot-api": "^0.30.1",
+    "@types/mathjs": "^4.4.5",
+    "@types/node-telegram-bot-api": "^0.30.4",
     "log4js": "^4.1.0",
-    "mathjs": "^5.0.2",
+    "mathjs": "^5.9.0",
     "node-telegram-bot-api": "^0.30.0"
   }
 }
