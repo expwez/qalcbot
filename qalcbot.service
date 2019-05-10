@@ -1,0 +1,11 @@
+[Unit]
+Description=Telegram math bot
+
+[Service]
+User=<enter username>
+WorkingDirectory=<enter directory path>
+ExecStart=/usr/bin/node dist/main.js
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
