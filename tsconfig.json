@@ -1,11 +1,21 @@
 {
   "compilerOptions": {
-    "target": "es6",
+    "target": "es2018",
     "module": "commonjs",
     "sourceMap": true,
     "outDir": "./dist",
     "rootDir": "./src",
     "strict": true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "strictNullChecks": true,
+    "noImplicitAny": true,
+    "allowUnreachableCode": false,
+    "allowUnusedLabels": false,
+    "experimentalDecorators": true,
+    "alwaysStrict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitThis": true,
+    "forceConsistentCasingInFileNames": true
   }
 }
