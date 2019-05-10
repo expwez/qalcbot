@@ -4,10 +4,15 @@
 // THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 import * as tgbot from "node-telegram-bot-api"
-import * as mathjs from "mathjs"
 import * as log4js from "log4js"
 import { Calculator, CalculatorAnswer, CalculateError } from "./calculator"
-import { transliterate, getUserDisplayName } from "./helpers"
+import { transliterate, getUserDisplayName, readJsonSync } from "./helpers"
+
+interface Config {
+    token: string
+}
+
+let config = readJsonSync("./config.json") as Config;
 
 let debug = false;
 if (process.argv.length > 2 && process.argv[2] == "--debug") {
@@ -21,7 +26,7 @@ log4js.configure({
 
 const logger = log4js.getLogger("default");
 
-const bot = new tgbot.default("000000000:AAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+const bot = new tgbot.default(config.token); 
  
 // Save examples article
 const examples = {
