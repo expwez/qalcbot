@@ -14,5 +14,9 @@
     "log4js": "^4.1.0",
     "mathjs": "^5.9.0",
     "node-telegram-bot-api": "^0.30.0"
+  },
+  "devDependencies": {
+    "tslint": "^5.20.1",
+    "typescript": "^3.7.5"
   }
 }
