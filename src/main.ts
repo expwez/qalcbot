@@ -125,6 +125,8 @@ bot.on("message", (msg: tgbot.Message) => {
             answer = calculator.calculate(compiledText);
         } catch (e) {
             if (e instanceof CalculateError) {
+                logger.debug("`" + msg.chat + "` id got error while calculating: " + e.message);
+
                 bot.sendMessage(msg.from.id, e.message);
                 return;
             }

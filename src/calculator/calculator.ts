@@ -6,7 +6,7 @@ export class Calculator {
     public calculate(query: string): CalculatorAnswer {
         let res: any;
         try {
-            res = mathjs.eval(query);
+            res = mathjs.evaluate(query);
         } catch (e) {
             throw new CalculateError(e.message, query);
         }

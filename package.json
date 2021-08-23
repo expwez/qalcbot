@@ -10,13 +10,13 @@
   "author": "expwez",
   "license": "MIT",
   "dependencies": {
-    "@types/mathjs": "^4.4.5",
-    "@types/node-telegram-bot-api": "^0.30.4",
     "log4js": "^4.1.0",
-    "mathjs": "^7.5.1",
+    "mathjs": "^9.4.4",
     "node-telegram-bot-api": "^0.30.0"
   },
   "devDependencies": {
+    "@types/mathjs": "^9.4.2",
+    "@types/node-telegram-bot-api": "^0.51.4",
     "tslint": "^5.20.1",
     "typescript": "^3.7.5"
   }
